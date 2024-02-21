@@ -1,0 +1,229 @@
+/* game_styles.css */
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: url('resources/background1.png') center/cover fixed;
+    color: #fff;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #081a2b;
+    height: 5%;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid #385eab;
+}
+
+.secondary-nav {
+    display: flex;
+    align-items: center;
+    margin-right: 5%;
+}
+
+.secondary-nav .nav-link {
+    color: #ffdb26;
+    font-size: max(1vw, 16px);
+    font-weight: bold;
+    margin-right: 2vw;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+@media screen and (max-width: 860px) {
+    .secondary-nav .nav-link {
+        font-size: 2.5vw;
+        margin-right: 1vw;
+    }
+}
+
+.secondary-nav .nav-link:hover {
+    transform: rotate(-10deg);
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: 5%;
+}
+
+.nav-link {
+    margin-right: 2vw;
+    text-decoration: none;
+    color: #fff;
+    font-size: max(1vw, 16px);
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+@media screen and (max-width: 860px) {
+    .nav-link {
+        font-size: 2.5vw;
+        margin-right: 1vw;
+    }
+}
+
+.nav-link:hover {
+    transform: rotate(-10deg);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+@media screen and (max-width: 860px) {
+    .logo {
+        width: 75%;
+    }
+}
+
+.logo:hover {
+    transform: scale(1.075);
+}
+
+.game-square {
+    width: 1280px;
+    height: 720px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('gameart/game_bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 2px solid #000;
+    overflow: hidden;
+}
+
+@keyframes playerHover {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.player {
+    position: absolute;
+    animation: playerHover 1.5s ease-in-out infinite;
+    z-index: 3;
+}
+
+.player-shadow {
+    position: absolute;
+    z-index: 0;
+}
+
+.cupcake {
+    position: absolute;
+    animation: playerHover 3s ease-in-out infinite;
+    z-index: 2;
+}
+
+.cupcake-shadow {
+    position: absolute;
+    z-index: 0;
+}
+
+.enemy {
+    position: absolute;
+    z-index: 1;
+}
+
+.counter {
+    position: absolute;
+    top: 1%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(17, 24, 43, 0.6);
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 24px;
+    z-index: 11;
+}
+
+img.try-again {
+    position: absolute;
+    left: calc(50% - 170px); /* Adjust the value (50px) according to the width of the button */
+    bottom: 13%;
+    transform: translateX(-50%);
+    z-index: 11;
+    animation: tryAgainHover 1s ease-in-out infinite alternate;
+}
+
+@keyframes tryAgainHover {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;;
+    background-color: rgba(0, 0, 0, 0); /* Start with 0% opacity */
+    z-index: 10; /* Ensure it's behind the "Try Again" image */
+    transition: background-color 1s ease; /* Transition for opacity change */
+}
+
+.overlay.active {
+    background-color: rgba(0, 0, 0, 0.2); /* Set opacity to 35% */
+}
+
+.gg-image {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10; /* Ensure it's above other elements */
+    /* Add any additional styling you want for the gg image */
+}
+
+.audio-control {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 12;
+    cursor: pointer; /* Add cursor pointer to indicate it's clickable */
+    /* Add any additional styling you want for the audio control button */
+}
+
+.centered-footer {
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

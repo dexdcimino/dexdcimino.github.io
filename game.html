@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="game_styles.css">
+    <link rel="preload" href="resources/background1.png" as="image">
+    <link rel="preload" href="resources/logo.png" as="image">
+    <link rel="icon" href="resources/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="resources/favicon.ico" type="image/x-icon">
+    <title>Dex's Stuff!</title>
+</head>
+<body>
+  <header class="header">
+    <div class="logo-container">
+      <a href="index.html">
+        <img src="resources/dexsstuff_logo.png" alt="Logo" class="logo">
+      </a>
+    </div>
+    <nav class="header-nav">
+      <a href="index.html" class="nav-link" style="color: #ff3399;">Images</a>
+      <a href="reels.html" class="nav-link" style="color: #00ff7a;">Reels</a>
+      <a href="resume.html" class="nav-link" style="color: #1199ff;">Resume</a>
+    </nav>
+
+    <nav class="secondary-nav">
+        <a href="game.html" class="nav-link" style="color: #ffdb26;">Game</a>
+        <a href="contact.html" class="nav-link" style="color: #ffdb26;">Contact</a>
+    </nav>
+
+  </header>
+
+<div id="gameSquare" class="game-square">
+    <span id="counter" class="counter">0</span>
+    <img id="player" class="player" src="gameart/player_front.png">
+    <img id="cupcake" class="cupcake" src="gameart/cupcake.png">
+    <img id="audioControl" class="audio-control" src="gameart/audio_off.png" alt="Audio Control">
+</div>
+
+  <footer class="centered-footer">
+    <p> By Dex Cimino 2024 </p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="game_script.js"></script>
+  <script src="game_enemy.js"></script>
+
+</body>
+</html>
