@@ -8,24 +8,24 @@
     <link rel="preload" href="resources/logo.png" as="image">
     <link rel="icon" href="resources/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="resources/favicon.ico" type="image/x-icon">
-    <title>Dex's Stuff!</title>
+    <title>Dex's Contact</title>
 </head>
 <body>
   <header class="header">
     <div class="logo-container">
-      <a href="index.html">
+      <a href="contact.html">
         <img src="resources/dexsstuff_logo.png" alt="Logo" class="logo">
       </a>
     </div>
     <nav class="header-nav">
-      <a href="index.html" class="nav-link" style="color: #ff3399;">Images</a>
-      <a href="reels.html" class="nav-link" style="color: #00ff7a;">Reels</a>
+      <a href="index.html" class="nav-link" style="color: #1199ff;">Images</a>
+      <a href="reels.html" class="nav-link" style="color: #1199ff;">Reels</a>
       <a href="resume.html" class="nav-link" style="color: #1199ff;">Resume</a>
     </nav>
 
     <nav class="secondary-nav">
-        <a href="game.html" class="nav-link" style="color: #ffdb26;">Game</a>
-        <a href="contact.html" class="nav-link" style="color: #ffdb26;">Contact</a>
+        <a href="game.html" class="nav-link" style="color: #1199ff;">miniGame</a>
+        <a href="contact.html" class="nav-link" style="color: #ffffff;">Contact</a>
     </nav>
 
   </header>
@@ -37,7 +37,7 @@
     <div class="contact-overlay">
         <div class="contact-content">
             <p class="contact-text">Currently working on this page, so please email me at:</p>
-            <p class="contact-email">dexdcimino@gmail.com</p>
+            <p class="contact-email">dexdcimino@gmail.com<span class="copy-email"><img src="resources/copy_clipboard.png" alt="Copy to Clipboard" onclick="copyToClipboard()"></span></p>
         </div>
     </div>
     <img class="dex-contact-image" src="resources/contact_filler.png" alt="Dex Contact">
@@ -45,8 +45,39 @@
   </section>
 
   <footer class="centered-footer">
-    <p> By Dex Cimino 2024 </p>
+    <p> By Dex 2024 </p>
   </footer>
+
+<script>
+function copyToClipboard() {
+    const email = document.querySelector('.contact-email').textContent.trim().replace('📋', ''); // Remove the clipboard icon from the email text
+    const textArea = document.createElement('textarea');
+    textArea.value = email;
+
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+
+    const copiedMessage = document.createElement('div');
+    copiedMessage.textContent = 'Email copied to clipboard: ' + email;
+    copiedMessage.style.position = 'fixed';
+    copiedMessage.style.top = '32%';
+    copiedMessage.style.left = '50%';
+    copiedMessage.style.transform = 'translate(-50%, -50%)';
+    copiedMessage.style.padding = '10px';
+    copiedMessage.style.background = '#1199ff';
+    copiedMessage.style.color = '#ffffff';
+    copiedMessage.style.fontWeight = 'bold';
+    copiedMessage.style.borderRadius = '5px';
+    copiedMessage.style.zIndex = '9999';
+    document.body.appendChild(copiedMessage);
+
+    setTimeout(function() {
+        document.body.removeChild(copiedMessage);
+    }, 3000); // Remove the message after 3 seconds
+}
+</script>
 
 </body>
 </html>

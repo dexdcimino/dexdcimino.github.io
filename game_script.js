@@ -45,7 +45,7 @@ window.addEventListener('DOMContentLoaded', () => {
         player.style.left = playerX + 'px';
         player.style.top = playerY + 'px';
 
-        playerShadow.style.left = (playerX + 0) + 'px';
+        playerShadow.style.left = (playerX - 3) + 'px';
         playerShadow.style.top = (playerY + 70) + 'px';
     };
 

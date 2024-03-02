@@ -5,6 +5,7 @@ body {
     font-family: 'Roboto', sans-serif;
     background: url('resources/background1.png') center/cover fixed;
     color: #fff;
+    overflow-y: scroll;
 }
 
 header {
@@ -12,7 +13,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #081a2b;
+    background-color: #111a23;
     height: 5%;
     text-align: center;
     display: flex;
@@ -20,22 +21,23 @@ header {
     align-items: center;
     z-index: 2;
     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
-    border-bottom: 2px solid #385eab;
+    border-bottom: 2px solid #1199ff;
 }
 
 .secondary-nav {
     display: flex;
     align-items: center;
-    margin-right: 5%;
+    margin-right: 6%;
 }
 
 .secondary-nav .nav-link {
     color: #ffdb26;
     font-size: max(1vw, 16px);
-    font-weight: bold;
     margin-right: 2vw;
     text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: color 0.1s ease, transform 0.3s ease;
+    backface-visibility: hidden; /* Prevent text distortion during rotation */
+    transform-style: preserve-3d; /* Preserve 3D space for smoother animations */
 }
 
 @media screen and (max-width: 860px) {
@@ -46,34 +48,35 @@ header {
 }
 
 .secondary-nav .nav-link:hover {
-    transform: rotate(-10deg);
+    transform: rotate(-10deg) translateZ(0); /* Apply translateZ(0) to prevent blurring */
 }
 
 .header-nav {
     display: flex;
     align-items: center;
     margin-right: auto;
-    margin-left: 5%;
+    margin-left: 8%;
 }
 
 .nav-link {
-    margin-right: 2vw;
-    text-decoration: none;
-    color: #fff;
-    font-size: max(1vw, 16px);
-    font-weight: bold;
-    transition: color 0.3s ease, transform 0.3s ease;
+  margin-right: 2vw;
+  text-decoration: none;
+  color: #fff;
+  font-size: max(1vw, 16px);
+  transition: color 0.1s ease, transform 0.3s ease;
+  backface-visibility: hidden; /* Prevent text distortion during rotation */
 }
 
 @media screen and (max-width: 860px) {
-    .nav-link {
-        font-size: 2.5vw;
-        margin-right: 1vw;
-    }
+  .nav-link {
+    font-size: 2.5vw;
+    margin-right: 1vw;
+  }
 }
 
 .nav-link:hover {
-    transform: rotate(-10deg);
+  transform: rotate(-10deg);
+  color: #ffffff !important;
 }
 
 .logo-container {
@@ -87,7 +90,7 @@ header {
 }
 
 .logo {
-    width: 100%;
+    width: 90%;
     height: auto;
     transition: transform 0.3s ease;
 }
@@ -113,7 +116,7 @@ header {
     background-image: url('gameart/game_bg.png');
     background-size: cover;
     background-repeat: no-repeat;
-    border: 2px solid #000;
+    border: 2px solid #1199ff;
     overflow: hidden;
 }
 
@@ -161,7 +164,7 @@ header {
     top: 1%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgba(17, 24, 43, 0.6);
+    background-color: rgba(10, 15, 20, 0.5);
     padding: 3px 10px;
     border-radius: 10px;
     font-family: 'Arial Black', sans-serif;
@@ -171,7 +174,7 @@ header {
 
 img.try-again {
     position: absolute;
-    left: calc(50% - 170px); /* Adjust the value (50px) according to the width of the button */
+    left: calc(50% - 205px); /* Adjust the value (50px) according to the width of the button */
     bottom: 13%;
     transform: translateX(-50%);
     z-index: 11;
