@@ -47,10 +47,6 @@ header {
     }
 }
 
-.secondary-nav .nav-link:hover {
-    transform: rotate(-10deg) translateZ(0); /* Apply translateZ(0) to prevent blurring */
-}
-
 .header-nav {
     display: flex;
     align-items: center;
@@ -75,7 +71,6 @@ header {
 }
 
 .nav-link:hover {
-  transform: rotate(-10deg);
   color: #ffffff !important;
 }
 
