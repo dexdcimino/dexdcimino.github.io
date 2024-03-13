@@ -18,7 +18,7 @@ header {
   align-items: center;
   z-index: 2;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
-  border-bottom: 2px solid #1199ff;
+  border-bottom: 2px solid #000000;
 }
 
 .secondary-nav {
@@ -105,7 +105,7 @@ header {
 }
 
 .portfolio {
-  background-color: #1a2d3d;
+  background-color: #304e69;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
