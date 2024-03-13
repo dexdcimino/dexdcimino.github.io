@@ -3,7 +3,7 @@
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background: url('resources/background1.png') center/cover fixed;
+    background: url('resources/background2.png') center/cover fixed;
     color: #fff;
     overflow-y: scroll;
 }
