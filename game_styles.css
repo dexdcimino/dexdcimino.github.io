@@ -1,61 +1,33 @@
-/* game_styles.css */
-
 body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    background: url('resources/background2.png') center/cover fixed;
-    color: #fff;
-    overflow-y: scroll;
+  font-family: 'Roboto', sans-serif;
+  background-color: #111a23;
+  overflow-y: scroll;
+  color: #fff;
 }
 
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #111a23;
-    height: 5%;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 2;
-    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
-    border-bottom: 2px solid #000000;
-}
-
-.secondary-nav {
-    display: flex;
-    align-items: center;
-    margin-right: 6%;
-}
-
-.secondary-nav .nav-link {
-    color: #ffdb26;
-    font-size: max(1vw, 16px);
-    margin-right: 2vw;
-    text-decoration: none;
-    transition: color 0.1s ease, transform 0.3s ease;
-    backface-visibility: hidden; /* Prevent text distortion during rotation */
-    transform-style: preserve-3d; /* Preserve 3D space for smoother animations */
-}
-
-@media screen and (max-width: 860px) {
-    .secondary-nav .nav-link {
-        font-size: 2.5vw;
-        margin-right: 1vw;
-    }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0a0f14;
+  height: 7.5%;
+  text-align: center;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  z-index: 2;
 }
 
 .header-nav {
     display: flex;
     align-items: center;
     margin-right: auto;
-    margin-left: 8%;
+    margin-left: 5%;
 }
 
 .nav-link {
-  margin-right: 2vw;
+  margin-right: 1.5vw;
   text-decoration: none;
   color: #fff;
   font-size: max(1vw, 16px);
@@ -74,30 +46,49 @@ header {
   color: #ffffff !important;
 }
 
-.logo-container {
+.secondary-nav {
     display: flex;
     align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-right: 4%;
 }
 
-.logo {
-    width: 90%;
-    height: auto;
-    transition: transform 0.3s ease;
+.secondary-nav .nav-link {
+    color: #ffdb26;
+    font-size: max(1vw, 16px);
+    margin-right: 1.5vw;
+    text-decoration: none;
+    transition: color 0.1s ease, transform 0.3s ease;
+    backface-visibility: hidden; /* Prevent text distortion during rotation */
+    transform-style: preserve-3d; /* Preserve 3D space for smoother animations */
 }
 
 @media screen and (max-width: 860px) {
-    .logo {
-        width: 75%;
+    .secondary-nav .nav-link {
+        font-size: 2.5vw;
+        margin-right: 1vw;
     }
 }
 
-.logo:hover {
-    transform: scale(1.075);
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  zoom: reset;
+}
+
+.logo {
+  width: 90%;
+  height: auto;
+}
+
+@media screen and (max-width: 860px) {
+  .logo {
+  width: 75%;
+  }
 }
 
 .game-square {
@@ -220,7 +211,8 @@ img.try-again {
 
 .centered-footer {
     text-align: center;
-    color: #fff;
+    color: #406080;
+    font-weight: bold;
     position: absolute;
     bottom: 0;
     width: 100%;

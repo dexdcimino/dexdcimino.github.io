@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     overlay.appendChild(closeIcon);
 
     const projectConfig = {
-        project39: { imageCount: 6, videoCount: 1, title: "LiveTale Fan Art" },
+        project39: { imageCount: 6, videoCount: 1, title: "LiveTale Female" },
         project38: { imageCount: 2, videoCount: 1, title: "Tribal Elixir" },
         project37: { imageCount: 3, videoCount: 1, title: "Gobbler Fish" },
         project36: { imageCount: 4, videoCount: 1, title: "Robo-Owl" },
@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
         project2: { imageCount: 4, videoCount: 0, title: "Bone King" },
         project1: { imageCount: 3, videoCount: 0, title: "Learning ZBrush" }
     };
+
     addPortfolioItems();
 
     function addPortfolioItems() {
@@ -61,12 +62,12 @@ document.addEventListener('DOMContentLoaded', function () {
             const projectItem = document.createElement('div');
             projectItem.classList.add('portfolio-item');
             projectItem.id = project;
-            const projectName = config.title; // Get custom title from config
-            projectItem.setAttribute('data-project-name', projectName); // Set custom title as attribute
+            const projectName = config.title; 
+            projectItem.setAttribute('data-project-name', projectName); 
 
             const img = document.createElement('img');
             img.src = `projects/${project}/${project}_thumbnail.png`;
-            img.alt = projectName; // Use custom title as alt text
+            img.alt = projectName; 
 
             projectItem.appendChild(img);
             portfolioItems.appendChild(projectItem);
@@ -146,38 +147,6 @@ document.addEventListener('DOMContentLoaded', function () {
         overlayContent.scrollTop = 0;
     }
 
-    function openReelOverlay(reelId, numberOfVideos) {
-        overlayContent.innerHTML = '';
-        const videosFolder = `./reels/${reelId}/videos/`;
-
-        const videoContainer = document.createElement('div');
-        videoContainer.classList.add('video-container');
-        videoContainer.style.display = 'flex';
-        videoContainer.style.flexDirection = 'column'; // Align videos vertically
-        videoContainer.style.alignItems = 'center'; // Center items horizontally
-
-        for (let i = 1; i <= numberOfVideos; i++) {
-            const video = document.createElement('video');
-            video.controls = true;
-            video.style.maxWidth = '95%'; // Set maximum width for the video
-
-            // Set default volume to 40%
-            video.volume = 0.4;
-
-            const source = document.createElement('source');
-            source.src = `${videosFolder}video${i}.mp4`;
-            video.appendChild(source);
-
-            videoContainer.appendChild(video);
-        }
-
-        overlayContent.appendChild(videoContainer);
-        overlay.style.display = 'flex';
-        body.style.overflow = 'hidden';
-
-        overlayContent.scrollTop = 0;
-    }
-
     function closeOverlay() {
         overlay.style.display = 'none';
         body.style.overflow = 'auto';
@@ -214,3 +183,32 @@ document.addEventListener('DOMContentLoaded', function () {
         window.scrollTo(0, 0);
     };
 });
+
+function copyToClipboard() {
+    const email = document.querySelector('.contact-email').textContent.trim().replace('📋', ''); 
+    const textArea = document.createElement('textarea');
+    textArea.value = email;
+
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+
+    const copiedMessage = document.createElement('div');
+    copiedMessage.textContent = 'Email copied to clipboard: ' + email;
+    copiedMessage.style.position = 'fixed';
+    copiedMessage.style.top = '32%';
+    copiedMessage.style.left = '50%';
+    copiedMessage.style.transform = 'translate(-50%, -50%)';
+    copiedMessage.style.padding = '10px';
+    copiedMessage.style.background = '#1199ff';
+    copiedMessage.style.color = '#ffffff';
+    copiedMessage.style.fontWeight = 'bold';
+    copiedMessage.style.borderRadius = '5px';
+    copiedMessage.style.zIndex = '9999';
+    document.body.appendChild(copiedMessage);
+
+    setTimeout(function() {
+        document.body.removeChild(copiedMessage);
+    }, 1500); 
+}
