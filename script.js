@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     overlay.appendChild(closeIcon);
 
     const projectConfig = {
+        project40: { imageCount: 2, videoCount: 1, title: "Chomper" },
         project39: { imageCount: 6, videoCount: 1, title: "LiveTale Female" },
         project38: { imageCount: 2, videoCount: 1, title: "Tribal Elixir" },
         project37: { imageCount: 3, videoCount: 1, title: "Gobbler Fish" },
