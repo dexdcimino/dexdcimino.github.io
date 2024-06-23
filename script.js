@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     overlay.appendChild(closeIcon);
 
     const projectConfig = {
+        project43: { imageCount: 2, videoCount: 1, title: "SphereSpear WIP" },
         project42: { imageCount: 4, videoCount: 1, title: "Current WIP" },
         project41: { imageCount: 6, videoCount: 1, title: "Roblox DM4" },
         project40: { imageCount: 1, videoCount: 1, title: "Chomper" },
