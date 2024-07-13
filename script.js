@@ -10,11 +10,11 @@ document.addEventListener('DOMContentLoaded', function () {
     overlay.appendChild(closeIcon);
 
     const projectConfig = {
-        project44: { imageCount: 4, videoCount: 1, title: "GRIMSHOT" },
-        project43: { imageCount: 4, videoCount: 1, title: "SPEARSPHERE" },
-        project42: { imageCount: 4, videoCount: 1, title: "BIGHORN WIP" },
-        project41: { imageCount: 6, videoCount: 1, title: "ROBLOX DM4" },
-        project40: { imageCount: 1, videoCount: 1, title: "CHOMPER" },
+        project44: { imageCount: 4, videoCount: 1, title: "Grimshot Rifle" },
+        project43: { imageCount: 4, videoCount: 1, title: "SpearSphere" },
+        project42: { imageCount: 4, videoCount: 1, title: "BigHorn WIP" },
+        project41: { imageCount: 6, videoCount: 1, title: "Roblox DM4" },
+        project40: { imageCount: 1, videoCount: 1, title: "Chomper" },
         project39: { imageCount: 6, videoCount: 1, title: "LiveTale Female" },
         project38: { imageCount: 2, videoCount: 1, title: "Tribal Elixir" },
         project37: { imageCount: 3, videoCount: 1, title: "Gobbler Fish" },
