@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const projectConfig = {
         project44: { imageCount: 4, videoCount: 1, title: "Grimshot Rifle" },
         project43: { imageCount: 4, videoCount: 1, title: "SpearSphere" },
-        project42: { imageCount: 4, videoCount: 1, title: "BigHorn WIP" },
+        project42: { imageCount: 3, videoCount: 1, title: "BigHorn" },
         project41: { imageCount: 6, videoCount: 1, title: "Roblox DM4" },
         project40: { imageCount: 1, videoCount: 1, title: "Chomper" },
         project39: { imageCount: 6, videoCount: 1, title: "LiveTale Female" },
