@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
         project44: { imageCount: 4, videoCount: 1, title: "Grimshot Rifle" },
         project43: { imageCount: 4, videoCount: 1, title: "SpearSphere" },
         project42: { imageCount: 3, videoCount: 1, title: "BigHorn" },
-        project41: { imageCount: 6, videoCount: 1, title: "Roblox DM4" },
+        project41: { imageCount: 6, videoCount: 1, title: "Despicable Me 4" },
         project40: { imageCount: 1, videoCount: 1, title: "Chomper" },
         project39: { imageCount: 6, videoCount: 1, title: "LiveTale Female" },
         project38: { imageCount: 2, videoCount: 1, title: "Tribal Elixir" },
