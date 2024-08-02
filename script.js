@@ -10,9 +10,11 @@ document.addEventListener('DOMContentLoaded', function () {
     overlay.appendChild(closeIcon);
 
     const projectConfig = {
-        project44: { imageCount: 4, videoCount: 1, title: "Grimshot Rifle" },
-        project43: { imageCount: 4, videoCount: 1, title: "SpearSphere" },
-        project42: { imageCount: 3, videoCount: 1, title: "BigHorn" },
+        
+        project45: { imageCount: 4, videoCount: 1, title: "Grimshot Rifle" },
+        project44: { imageCount: 4, videoCount: 1, title: "SpearSphere" },
+        project43: { imageCount: 3, videoCount: 1, title: "BigHorn" },
+        project42: { imageCount: 6, videoCount: 2, title: "The Wild Robot" },
         project41: { imageCount: 6, videoCount: 1, title: "Despicable Me 4" },
         project40: { imageCount: 1, videoCount: 1, title: "Chomper" },
         project39: { imageCount: 6, videoCount: 1, title: "LiveTale Female" },
