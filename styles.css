@@ -1,6 +1,6 @@
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #111a23;
+  background-color: #1d2126;
 }
 
 header {
@@ -8,13 +8,14 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #0a0f14;
-  height: 7.5%;
+  background-color: #4e5867;
+  height: 7%;
   text-align: center;
   display: flex;
   justify-content: space-between; 
   align-items: center;
   z-index: 2;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* Strong drop shadow */
 }
 
 .header-nav {
@@ -112,19 +113,26 @@ header {
 
 .portfolio-item {
   position: relative;
-  margin: 0.25%;
+  margin: 2.5%;
   overflow: hidden;
-  width: calc(20% - 1%);
+  width: calc(25% - 2%);
+  height: auto; /* Ensures it wraps content without extra spacing */
+  cursor: pointer;
+  outline: 2px solid #4e5867;
+  outline-offset: 4px;
+  box-sizing: border-box;
 }
 
 .portfolio-item img {
+  display: block; /* Removes unwanted inline space */
   width: 100%;
-  height: auto;
-  transition: transform 0.5s ease; /* Only transition transform */
+  height: 100%;
+  transition: transform 0.5s ease;
+  object-fit: cover; /* Ensures the image always fills its container */
 }
 
 .portfolio-item:hover img {
-  transform: scale(1.05);
+  transform: scale(1.1); /* Reduce zoom scale slightly to avoid misalignment */
 }
 
 .portfolio-item::after {
@@ -140,7 +148,7 @@ header {
   font-weight: bold;
   color: #fff;
   background-color: #0a0f14;
-  padding: 0.5em;
+  padding: 0.75em;
   opacity: 0;
   transition: opacity 0.3s ease; /* Only transition opacity */
 }
@@ -172,7 +180,7 @@ header {
   max-width: 70%;
   max-height: 100%;
   overflow-y: auto;
-  background-color: #0a0f14;
+  background-color: #4e5867;
 }
 
 .close-btn {
@@ -221,3 +229,22 @@ header {
   color: #406080;
   font-weight: bold;
 }
+
+.particle {
+  position: absolute;
+  width: 6px; /* Default size */
+  height: 6px; /* Default size */
+  background-color: #4e5867; /* Updated dark blue-gray color */
+  pointer-events: none;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  z-index: 9999;
+  border-radius: 2px;
+}
+
+.particle.outlined {
+  background-color: transparent;
+  border: 1px solid #98acc9; /* Outlined version */
+}
+

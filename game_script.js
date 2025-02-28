@@ -189,4 +189,88 @@ window.addEventListener('DOMContentLoaded', () => {
     const initialPosition = getRandomPosition();
     cupcake.style.left = initialPosition.x + 'px';
     cupcake.style.top = initialPosition.y + 'px';
+
+
+
+let lastParticleTime = 0;
+let mouseX = 0, mouseY = 0;
+let isMouseMoving = false;
+let isScrolling = false; // Flag to prevent particles during scrolling
+
+document.addEventListener("mousemove", (event) => {
+    if (!isScrolling) {  // Only spawn particles if not scrolling
+        isMouseMoving = true;
+        mouseX = event.clientX;
+        mouseY = event.clientY;
+        spawnParticles(mouseX, mouseY, true); // Moving = true
+    }
 });
+
+document.addEventListener("scroll", () => {
+    isScrolling = true; // Set flag when scrolling
+    setTimeout(() => {
+        isScrolling = false; // Reset flag after scroll
+    }, 100); // Delay to allow particles to stop after scrolling
+});
+
+setInterval(() => {
+    if (!isScrolling) {  // Only spawn particles if not scrolling
+        spawnParticles(mouseX, mouseY, false); // Moving = false
+    }
+    isMouseMoving = false;
+}, 300); // Spawns every 300ms when stationary
+
+function spawnParticles(x, y, moving) {
+    const now = Date.now();
+    if (moving && now - lastParticleTime < 50) return; // Frequency control when moving
+    lastParticleTime = now;
+
+    // More particles when idle, less when moving
+    const numParticles = moving ? Math.floor(Math.random() * 2) + 1 : Math.floor(Math.random() * 3) + 3;
+
+    for (let i = 0; i < numParticles; i++) {
+        const particle = document.createElement("div");
+        particle.classList.add("particle");
+
+        // **25% chance of an outlined square instead of a filled particle**
+        if (Math.random() < 0.25) {
+            particle.classList.add("outlined");
+        }
+
+        // Adjusted spawn position (bottom-right of cursor)
+        const offsetX = 6;
+        const offsetY = 14;
+
+        // Include scroll position in Y coordinate to keep particles on mouse even when scrolling
+        const scrollOffsetY = window.scrollY || document.documentElement.scrollTop;
+
+        particle.style.left = `${x + offsetX}px`;
+        particle.style.top = `${y + offsetY + scrollOffsetY}px`;  // Add scroll offset to Y position
+
+        // Random size variation
+        const randomSize = Math.random() * 8 + 4;
+        particle.style.width = `${randomSize}px`;
+        particle.style.height = `${randomSize}px`;
+
+        document.body.appendChild(particle);
+
+        // More scattered motion when moving, tighter when stationary
+        const randomX = moving ? (Math.random() - 0.5) * 50 : (Math.random() - 0.5) * 20;
+        const randomY = moving ? Math.random() * 25 + 15 : Math.random() * 15 + 10;
+        const randomScale = 0.3 + Math.random();
+        const randomRotation = (Math.random() - 0.5) * 90; // **New rotation effect**
+
+        setTimeout(() => {
+            particle.style.opacity = "0";
+            particle.style.transform = `scale(${randomScale}) translate(${randomX}px, ${randomY}px) rotate(${randomRotation}deg)`;
+        }, 10);
+
+        setTimeout(() => {
+            particle.remove();
+        }, 1000);
+    }
+}
+
+
+});
+
