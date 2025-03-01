@@ -113,9 +113,9 @@ header {
 
 .portfolio-item {
   position: relative;
-  margin: 2.5%;
+  margin: 1%;
   overflow: hidden;
-  width: calc(25% - 2%);
+  width: calc(25% - 1%);
   height: auto; /* Ensures it wraps content without extra spacing */
   cursor: pointer;
   outline: 2px solid #4e5867;
@@ -132,7 +132,7 @@ header {
 }
 
 .portfolio-item:hover img {
-  transform: scale(1.1); /* Reduce zoom scale slightly to avoid misalignment */
+  transform: scale(1.05); /* Reduce zoom scale slightly to avoid misalignment */
 }
 
 .portfolio-item::after {
@@ -147,7 +147,7 @@ header {
   font-size: 1vw;
   font-weight: bold;
   color: #fff;
-  background-color: #0a0f14;
+  background-color: #4e5867;
   padding: 0.75em;
   opacity: 0;
   transition: opacity 0.3s ease; /* Only transition opacity */
@@ -160,7 +160,7 @@ header {
 }
 
 .portfolio-item:hover::after {
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .overlay {
@@ -226,7 +226,7 @@ header {
 
 .centered-footer {
   text-align: center;
-  color: #406080;
+  color: #6a788c;
   font-weight: bold;
 }
 

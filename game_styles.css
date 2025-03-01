@@ -212,11 +212,12 @@ img.try-again {
 
 .centered-footer {
     text-align: center;
-    color: #406080;
+    color: #6a788c;
     font-weight: bold;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
+    padding: 10px 0;
 }
 
 .particle {
