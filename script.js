@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         project43: { imageCount: 2, videoCount: 1, title: "Tribal Elixir" },
         project42: { imageCount: 6, videoCount: 2, title: "The Wild Robot" },
         project41: { imageCount: 2, videoCount: 2, title: "GraveRobber" },
-        project40: { imageCount: 1, videoCount: 1, title: "Chomper" },
+        project40: { imageCount: 1, videoCount: 0, title: "Chomper" },
         project39: { imageCount: 3, videoCount: 1, title: "Thunderjaw" },
         project38: { imageCount: 2, videoCount: 1, title: "BigHorn" },
         project37: { imageCount: 3, videoCount: 1, title: "Gobbler Fish" },
