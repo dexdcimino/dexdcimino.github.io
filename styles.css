@@ -61,6 +61,17 @@ header {
     transform-style: preserve-3d; /* Preserve 3D space for smoother animations */
 }
 
+.secondary-nav .sphere-btn {
+  height: auto;
+  margin-left: 10px; /* Adds space between miniGame and button */
+  cursor: pointer; /* Shows the finger pointer on hover */
+  transition: transform 0.3s ease; /* Optional: Add smooth hover effect */
+}
+
+.secondary-nav .sphere-btn:hover {
+  transform: scale(1.1); /* Optional: Adds zoom effect on hover */
+}
+
 @media screen and (max-width: 860px) {
     .secondary-nav .nav-link {
         font-size: 2.5vw;
