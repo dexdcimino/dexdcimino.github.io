@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', function () {
     overlay.appendChild(closeIcon);
 
     const projectConfig = {
+        project53: { imageCount: 5, videoCount: 0, title: "Little Croc" },
+        project52: { imageCount: 5, videoCount: 0, title: "Void Hydra Set" },
+        project51: { imageCount: 5, videoCount: 0, title: "Necromancer Set" },
+        project50: { imageCount: 3, videoCount: 2, title: "Chasm Lurker" },
         project49: { imageCount: 13, videoCount: 4, title: "Design" },
         project48: { imageCount: 7, videoCount: 1, title: "Corrupt Sentinel" },
         project47: { imageCount: 6, videoCount: 7, title: "Low-Res Character" },
@@ -125,6 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Adding videos if available
+        // Adding videos or gifs if available
         if (project.videoCount) {
             const videoContainer = document.createElement('div');
             videoContainer.classList.add('video-container');
@@ -134,21 +139,35 @@ document.addEventListener('DOMContentLoaded', function () {
             videoContainer.style.padding = '0% 2%';
 
             for (let i = 1; i <= project.videoCount; i++) {
-                const video = document.createElement('video');
-                video.controls = true;
-                video.style.maxWidth = '100%';
-                video.style.margin = '0 0 3vh';
-                video.volume = 0.4;
+                const videoPathMp4 = `${videosFolder}video${i}.mp4`;
+                const videoPathGif = `${videosFolder}video${i}.gif`;
 
-                const source = document.createElement('source');
-                source.src = `${videosFolder}video${i}.mp4`;
-                video.appendChild(source);
+                const img = document.createElement('img');
+                img.src = videoPathGif;
+                img.style.maxWidth = '100%';
+                img.style.margin = '0 0 3vh';
+                img.loading = 'lazy';
+                img.onerror = () => {
+                    // If gif doesn't load, fallback to video
+                    const video = document.createElement('video');
+                    video.controls = true;
+                    video.style.maxWidth = '100%';
+                    video.style.margin = '0 0 3vh';
+                    video.volume = 0.4;
 
-                videoContainer.appendChild(video);
+                    const source = document.createElement('source');
+                    source.src = videoPathMp4;
+                    video.appendChild(source);
+
+                    videoContainer.replaceChild(video, img);
+                };
+
+                videoContainer.appendChild(img);
             }
 
             contentContainer.appendChild(videoContainer);
         }
+
 
         overlayContent.appendChild(contentContainer);
         overlay.style.display = 'flex';
