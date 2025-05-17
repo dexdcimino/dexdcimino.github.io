@@ -10,12 +10,13 @@ document.addEventListener('DOMContentLoaded', function () {
     overlay.appendChild(closeIcon);
 
     const projectConfig = {
-        project56: { imageCount: 1, videoCount: 0, title: "Little Lion" },
-        project55: { imageCount: 1, videoCount: 0, title: "Little Panther" },
-        project54: { imageCount: 1, videoCount: 0, title: "Little Beast" },
-        project53: { imageCount: 5, videoCount: 0, title: "Little Croc" },
+        project57: { imageCount: 1, videoCount: 0, title: "Little Lion" },
+        project56: { imageCount: 1, videoCount: 0, title: "Little Panther" },
+        project55: { imageCount: 1, videoCount: 0, title: "Little Beast" },
+        project54: { imageCount: 5, videoCount: 0, title: "Little Croc" },
+        project53: { imageCount: 4, videoCount: 0, title: "Necromancer Set" },
         project52: { imageCount: 5, videoCount: 0, title: "Void Hydra Set" },
-        project51: { imageCount: 5, videoCount: 0, title: "Necromancer Set" },
+        project51: { imageCount: 5, videoCount: 0, title: "Zilla Set" },
         project50: { imageCount: 3, videoCount: 2, title: "Chasm Lurker" },
         project49: { imageCount: 13, videoCount: 4, title: "Design" },
         project48: { imageCount: 7, videoCount: 1, title: "Corrupt Sentinel" },
