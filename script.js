@@ -10,11 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
     overlay.appendChild(closeIcon);
 
     const projectConfig = {
-        project58: { imageCount: 10, videoCount: 0, title: "Creature_001" },
-        project57: { imageCount: 1, videoCount: 0, title: "Little Lion" },
-        project56: { imageCount: 1, videoCount: 0, title: "Little Panther" },
-        project55: { imageCount: 1, videoCount: 0, title: "Little Beast" },
-        project54: { imageCount: 5, videoCount: 0, title: "Little Croc" },
         project53: { imageCount: 4, videoCount: 0, title: "Necromancer Set" },
         project52: { imageCount: 5, videoCount: 0, title: "Void Hydra Set" },
         project51: { imageCount: 5, videoCount: 0, title: "Zilla Set" },
